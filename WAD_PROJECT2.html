@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .calculator {
+            width: 300px;
+            margin: 100px auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], select {
+            width: 100%;
+            font-size: 20px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+        .btn {
+            width: 100%;
+            font-size: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="input1" placeholder="Masukkan angka pertama" required>
+        <select id="input2" required>
+            <option value="0" disabled selected>Pilih angka kedua (1-10)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <button class="btn" onclick="calculateMultiplication()">Hitung Perkalian</button>
+        <form id="resultForm">
+            <label>Hasil Perkalian:</label>
+            <input type="text" id="result" readonly>
+        </form>
+    </div>
+
+    <script>
+        function calculateMultiplication() {
+            const input1 = parseFloat(document.getElementById('input1').value);
+            const input2 = parseFloat(document.getElementById('input2').value);
+            const result = input1 * input2;
+            document.getElementById('result').value = result;
+        }
+    </script>
+</body>
+</html>
